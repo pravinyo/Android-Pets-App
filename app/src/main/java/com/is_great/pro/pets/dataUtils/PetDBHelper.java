@@ -1,9 +1,9 @@
-package com.is_great.pro.pets.data;
+package com.is_great.pro.pets.dataUtils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.is_great.pro.pets.data.PetContract.PetEntry;
+import com.is_great.pro.pets.dataUtils.PetContract.PetEntry;
 /**
  * Created by Pravinyo on 1/3/2017.
  */

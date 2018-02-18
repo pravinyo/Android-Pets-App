@@ -1,4 +1,4 @@
-package com.is_great.pro.pets.data;
+package com.is_great.pro.pets.dataUtils;
 
 /**
  * Created by Pravinyo on 1/4/2017.
@@ -12,10 +12,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.is_great.pro.pets.MainActivity;
-import com.is_great.pro.pets.data.PetContract.PetEntry;
+import com.is_great.pro.pets.dataUtils.PetContract.PetEntry;
 
 /**
  * {@link ContentProvider} for Pets app.

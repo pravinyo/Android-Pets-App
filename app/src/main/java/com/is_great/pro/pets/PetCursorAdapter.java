@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.is_great.pro.pets.data.PetContract;
+import com.is_great.pro.pets.dataUtils.PetContract;
 
 /**
  * {@link PetCursorAdapter} is an adapter for a list or grid view

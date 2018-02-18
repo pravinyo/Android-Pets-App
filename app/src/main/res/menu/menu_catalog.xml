@@ -18,6 +18,7 @@
 
     <item
         android:id="@+id/menu_search"
+        android:title="@string/action_search_pets"
         android:icon="@drawable/ic_search_white_24dp"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always"/>
@@ -31,4 +32,8 @@
         android:id="@+id/action_delete_all_entries"
         android:title="@string/action_delete_all_entries"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sync_all_entries"
+        android:title="@string/action_sync_all_entries"
+        app:showAsAction="never"/>
 </menu>

@@ -25,7 +25,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.is_great.pro.pets.data.PetContract.PetEntry;
+import com.is_great.pro.pets.dataUtils.PetContract.PetEntry;
+import com.is_great.pro.pets.syncUtils.PetsSyncUtils;
 import com.is_great.pro.pets.utils.SwipeDetector;
 
 /**
@@ -125,10 +126,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-
         Intent intent = getIntent();
         getLoaderManager().initLoader(LOADER_ID,null,this);
         handleIntent(intent);
+
+        PetsSyncUtils.startImmediateSync(this);
     }
 
     private void handleAction(){
@@ -253,9 +255,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             case R.id.action_delete_all_entries:
                 deleteAll();
                 return true;
+            // Respond to click on sync all entries
+            case R.id.action_sync_all_entries:
+                startSyncService();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void startSyncService() {
+        PetsSyncUtils.startImmediateSync(this);
+    }
+
     /**
      * Temporary helper method to display information in the onscreen TextView about the state of
      * the pets database.

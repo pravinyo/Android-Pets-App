@@ -35,7 +35,7 @@
         </activity>
 
         <provider
-            android:name=".data.PetProvider"
+            android:name=".dataUtils.PetProvider"
             android:authorities="com.is_great.pro.pets"
             android:exported="false" />
 
@@ -43,7 +43,20 @@
             android:name=".PetProfileActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_pet_profile"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme"/>
+
+        <service
+            android:name=".syncUtils.PetsSyncIntentService"
+            android:exported="false" />
+
+        <service
+            android:name=".syncUtils.PetsFirebaseJobService"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

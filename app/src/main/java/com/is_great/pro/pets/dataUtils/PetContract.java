@@ -1,4 +1,4 @@
-package com.is_great.pro.pets.data;
+package com.is_great.pro.pets.dataUtils;
 
 import android.content.ContentResolver;
 import android.net.Uri;
