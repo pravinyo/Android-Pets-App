@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 PetEntry.COLUMN_PET_BREED,
                 PetEntry.COLUMN_PET_GENDER,
                 PetEntry.COLUMN_PET_WEIGHT
+                //PetEntry.COLUMN_PET_STATUS
         };
 
         Cursor mCursor=getContentResolver().query(mCurrentPetUri,projection,null,null,null,null);
@@ -182,6 +183,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(PetEntry.COLUMN_PET_BREED,"Doberman");
         values.put(PetEntry.COLUMN_PET_GENDER, PetEntry.GENDER_MALE);
         values.put(PetEntry.COLUMN_PET_WEIGHT,14);
+        //values.put(PetEntry.COLUMN_PET_STATUS,PetEntry.STATUS_NOT_SYNC);
 
         String log=""+getContentResolver().insert(PetEntry.CONTENT_URI,values);
         Log.i("MainActivity",log);
@@ -204,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     PetEntry.COLUMN_PET_BREED,
                     PetEntry.COLUMN_PET_GENDER,
                     PetEntry.COLUMN_PET_WEIGHT
+                    //PetEntry.COLUMN_PET_STATUS
             };
 
             String selection=PetEntry.COLUMN_PET_NAME+" = ?";
@@ -279,7 +282,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 PetEntry.COLUMN_PET_NAME,
                 PetEntry.COLUMN_PET_BREED,
                 PetEntry.COLUMN_PET_GENDER,
-                PetEntry.COLUMN_PET_WEIGHT
+                PetEntry.COLUMN_PET_WEIGHT,
+                //PetEntry.COLUMN_PET_STATUS
         };
         return new CursorLoader(this,
                 PetEntry.CONTENT_URI,

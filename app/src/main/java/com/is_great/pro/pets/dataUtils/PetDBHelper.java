@@ -9,8 +9,8 @@ import com.is_great.pro.pets.dataUtils.PetContract.PetEntry;
  */
 
 public class PetDBHelper extends SQLiteOpenHelper{
-    private final static String DATABASE_NAME="shelter2.db";
-    private final static int DATBASE_VERSION=1;
+    private final static String DATABASE_NAME="shelter25.db";
+    private final static int DATBASE_VERSION=25;
 
     private static final String SQL_CREATE_ENTERIES="CREATE TABLE "+ PetEntry.TABLE_NAME+"("+
             PetEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
@@ -28,6 +28,8 @@ public class PetDBHelper extends SQLiteOpenHelper{
     }
 
     public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
-
+        String sql = "DROP TABLE IF EXISTS "+ PetEntry.TABLE_NAME;
+        db.execSQL(sql);
+        onCreate(db);
     }
 }

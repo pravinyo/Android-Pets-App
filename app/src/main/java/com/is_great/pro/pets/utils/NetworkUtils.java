@@ -13,16 +13,17 @@ import java.net.URL;
 public class NetworkUtils {
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
-    private static final String SERVER_BASE_URL="";
-    private static final String appid="";
+    private static final String SERVER_BASE_URL="http://192.168.0.6/pet/index.php";
 
+    public static String getStringUrl(Context context){
+        return SERVER_BASE_URL;
+    }
     public static URL getUrl(Context context){
-        return buildUrl(appid);
+        return buildUrl();
     }
 
-    private static URL buildUrl(String appid) {
+    private static URL buildUrl() {
         Uri serverQueryUri = Uri.parse(SERVER_BASE_URL).buildUpon()
-                .appendQueryParameter("appid",appid)
                 .build();
 
         try{

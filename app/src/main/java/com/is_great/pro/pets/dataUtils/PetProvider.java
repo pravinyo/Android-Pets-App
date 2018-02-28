@@ -127,6 +127,10 @@ public class PetProvider extends ContentProvider {
         if (breed == null) {
             throw new IllegalArgumentException("Breed needs to be specified");
         }
+        /*int status = values.getAsInteger(PetEntry.COLUMN_PET_STATUS);
+        if(status!=PetEntry.STATUS_NOT_SYNC && status!=PetEntry.STATUS_SYNC){
+            throw new IllegalArgumentException("Check Status");
+        }*/
         int weight = values.getAsInteger(PetEntry.COLUMN_PET_WEIGHT);
         if (weight<1 || weight >100) {
             throw new IllegalArgumentException("Check weight");

@@ -25,12 +25,17 @@ public final class PetContract {
         public final static String COLUMN_PET_BREED="breed";
         public final static String COLUMN_PET_WEIGHT="weight";
         public final static String COLUMN_PET_GENDER="gender";
+       // public final static String COLUMN_PET_STATUS ="status";
 
 
         public final static int GENDER_UNKNOWN=0;
         public final static int GENDER_MALE=1;
         public final static int GENDER_FEMALE=2;
 
+        /*
+        public final static int STATUS_SYNC = 1;
+        public final static int STATUS_NOT_SYNC = 0;
+*/
 
         /**
          * The MIME type of the {@link #CONTENT_URI} for a list of pets.
